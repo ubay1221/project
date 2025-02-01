@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATTO</title>
+    <style>
+        @media (max-width: 100%) {
+
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e2a62;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            height: 100hv;
+            width: 100%; /* Используем 90% от ширины экрана */
+            max-width: 120%;
+            background-color: #182059;
+            /* overflow: hidden; */
+            padding: 10px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            color: white;
+            position: relative;
+            justify-content: center; /* Центрируем по горизонтали */
+            align-items: center;
+            text-align: center;
+        }
+        .header-section {
+            background:
+            linear-gradient(to bottom, rgba(83, 80, 206, 0.7), rgba(83, 80, 206, 0.9)), /* Полупрозрачный градиент */
+            url('/media/Blue-Hexagon-Pattern-by-noory.shopper.jpg'); /* Путь к изображению */
+            background-size: cover;
+            background-position: center;  /* Центрируем изображение */
+            border-radius: 30px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Распределение элементов */
+            height: 200px; /* Высота секции (если не хотите фиксированную высоту, можно использовать min-height) */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Тень снаружи */
+        }
+        .header {
+            font-size: 13px;
+            font-weight: bold;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+        }
+        .balance {
+            font-size: 20px;
+            font-weight: bold;
+            top: 40px;
+            position: absolute;
+            bottom: 40px; /* Расположение баланса в нижнем левом углу */
+            left: 20px;
+            display: flex; /* Используем flexbox */
+        }
+        .card {
+            color: lightgray;
+            border-radius: 15px;
+            padding: 10px 15px;
+            font-size: 12px;
+            position: absolute;
+            bottom: 5px; /* Расположение карты ниже баланса */
+            left: 5px;
+            font-family: system-ui;
+            font-weight: 300;
+        }
+        .payment-info {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: flex; /* Используем flexbox */
+            justify-content: center; /* Горизонтальное центрирование */
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+        .details {
+            font-size: 14px;
+            font-family: system-ui;
+            position: relative;
+            display: column;
+        }
+        .button {
+            width: 100%;
+            padding: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 7px;
+            margin-top: 200px;
+            position: relative;
+            display: block;
+            transform: translate( 0px, -40px);
+        }
+        .pay {
+            background-color: #0BDA51;
+            color: white;
+            font-family: system-ui;
+            font-weight: 500;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+
+        }
+        .cancel {
+            background-color: #34489f;
+            color: white;
+            font-family: system-ui;
+            font-weight: 500;
+            margin-top: -20px;
+        }
+        .image {
+            max-width: 230px; /* Ограничиваем ширину изображения */
+            height: auto;
+            position: absolute;
+            top: -75px;
+            right: -45px; /* Располагаем изображение в правом верхнем углу */
+        }
+        .text_uzs {
+            color: gray;
+            font-size: 12px;
+            font-family: system-ui;
+            transform: translate( 5px, 5px);
+        }
+        .text_pay {
+            color: #8f91bb;
+            font-size: 12px;
+            margin-top: 18px;
+            height: 25px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }
+        .header-section h4 {
+            margin: auto;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-family: system-ui;
+            font-size: 19px;
+        }
+        .details h4 {
+            transform: translate( 0px, -25px);
+            text-align: right;
+            font-weight: 400;
+        }
+        .details h5 {
+            color: #8f91bb;
+            text-align: left;
+            transform: translate( 5px, 20px);
+            font-weight: 500;
+        }
+        .line {
+            width: 100%;
+            background-color: #1e1a52;
+            border: 1px solid #1e1a52;
+            display: block;
+            margin-top: -30px;
+        }
+        .button-link {
+          text-decoration: none; /* Убирает подчеркивание у ссылки */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-section">
+            <div class="header">atto</div>
+            <h4>ATTO</h4>
+            <div class="balance">
+                22 650
+                <div class="text_uzs">uzs</div>
+            </div>
+            <div class="card">9987 1000 1953 0282</div>
+        </div>
+
+        <div class="payment-info"> <div class="text_pay"> К оплате</div> 1 700 сум</div>
+        <div class="details">
+            <h5>Маршрут</h5><h4>Маршрут № 53</h4>
+            <hr class="line">
+            <h5>Гос.номер</h5><h4>Не известно</h4>
+            <hr class="line">
+            <h5>Статус</h5><h4>Не оплачено</h4>
+            <hr class="line">
+        </div>
+
+        <a href="{% url 'pay' %}" class="button-link"><button class="button pay">Оплатить поездку</button></a> <br> <br>
+        <button class="button cancel">Отмена</button>
+    </div>
+</body>
+</html>

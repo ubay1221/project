@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATTO</title>
+    <style>
+        @media (max-width: 100%) {
+
+        }
+
+        body {
+            margin: 0;
+            background-color: #182059;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            height: 100%;
+            width: 100%; /* Используем 90% от ширины экрана */
+            max-width: 100%;
+            background-color: #182059;
+            /* overflow: hidden; */
+            padding: 10px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            color: white;
+            position: relative;
+            justify-content: center; /* Центрируем по горизонтали */
+            align-items: center;
+            text-align: center;
+        }
+        .image img{
+            width: 53%;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .payment-info {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: flex; /* Используем flexbox */
+            justify-content: center; /* Горизонтальное центрирование */
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            font-family: system-ui;
+            text-align: justify;
+            letter-spacing: 0px;
+        }
+        .details {
+            font-size: 14px;
+            font-family: system-ui;
+            position: relative;
+            display: column;
+        }
+        .button {
+            width: 100%;
+            padding: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 7px;
+            margin-top: 180px;
+            position: relative;
+            display: block;
+            transform: translate( 0px, -40px);
+        }
+        .pay {
+            background-color: #0BDA51;
+            color: white;
+            font-family: system-ui;
+            font-weight: 500;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+
+        }
+        .text_pay {
+            color: #8f91bb;
+            font-size: 11px;
+            margin-top: 0px;
+            height: 15px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }
+        .details h4 {
+            transform: translate( 0px, -30px);
+            text-align: right;
+            font-weight: 500;
+        }
+        .details h5 {
+            color: #8f91bb;
+            text-align: left;
+            transform: translate( 5px, 10px);
+            font-weight: 400;
+        }
+        .line {
+            width: 100%;
+            background-color: #1e1a52;
+            border: 1px solid #1e1a52;
+            display: block;
+            margin-top: -40px;
+        }
+        .confirmation h6{
+            color: #0BDA51;
+            font-family: system-ui;
+            font-weight: 500;
+        }
+        .button-link {
+          text-decoration: none; /* Убирает подчеркивание у ссылки */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="confirmation" ><h6>Вы успешно оплатили проездку</h6></div>
+        <div class="payment-info"> <div class="text_pay">Номер чека</div> 278564 </div>
+        <br>
+        <div class="image">
+            <img src="/media/qr-code-rule-website.png">
+        </div>
+        <br>
+        <div class="details">
+            <h5>Оплачено</h5><h4>1 700 UZS</h4>
+            <hr class="line">
+            <h5>Время оплаты</h5><h4>{{ date_time }}</h4>
+            <hr class="line">
+            <h5>Маршрут</h5><h4>Маршрут № 53</h4>
+            <hr class="line">
+            <h5>Гос.номер</h5><h4>Не известно</h4>
+            <hr class="line">
+        </div>
+        <a href="{% url 'qr' %}" class="button-link"><button class="button pay">На главную</button></a>
+    </div>
+</body>
+</html>

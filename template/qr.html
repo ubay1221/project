@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATTO</title>
+    <style>
+        @media (max-width: 100%) {
+
+        }
+
+        body {
+            margin: 0;
+            background-color: #1e2a62;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: system-ui;
+        }
+        .container {
+            height: 100%;
+            width: 100%; /* Используем 90% от ширины экрана */
+            max-width: 100%;
+            background-color: #182059;
+            /* overflow: hidden; */
+            padding: 10px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            color: white;
+            position: relative;
+            justify-content: center; /* Центрируем по горизонтали */
+            align-items: center;
+            text-align: center;
+        }
+        .cancel {
+            background-color: #34489f;
+            color: white;
+            font-family: system-ui;
+            font-weight: 500;
+            margin-top: -20px;
+        }
+        .confirmation h5{
+            color: #0BDA51;
+            font-family: system-ui;
+            font-weight: 500;
+        }
+        .button {
+            width: 100%;
+            padding: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 7px;
+            margin-top: 170px;
+            position: relative;
+            display: block;
+            transform: translate( 0px, -40px);
+        }
+        .text h3 {
+            font-weight: 500;
+        }
+        qr {
+            border: 3px dotted blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text" > <h3>QR оплата</h3> </div>
+        <div class="confirmation" ><h5>Наведите камеру на QR-код</h5></div>
+        <h1>Видеозахват с камеры</h1>
+        <video class="" id="videoElement" width="300" height="400" autoplay></video>
+
+        <script>
+            // Запрашиваем доступ к камере пользователя
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function(stream) {
+                    // Привязываем поток к элементу video
+                    const videoElement = document.getElementById('videoElement');
+                    videoElement.srcObject = stream;
+                })
+                .catch(function(error) {
+                    console.log("Ошибка доступа к камере: ", error);
+                });
+        </script>
+        <button class="button cancel">Отмена</button>
+    </div>
+</body>
+</html>
